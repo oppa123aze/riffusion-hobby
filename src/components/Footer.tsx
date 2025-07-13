@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Music, Github, Twitter, Discord, Heart } from 'lucide-react';
+import { Music, Github, Twitter, Disc as Discord, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (

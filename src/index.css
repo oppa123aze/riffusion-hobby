@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900;
+    @apply text-white min-h-screen;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600;
+    @apply text-white font-semibold py-3 px-6 rounded-xl;
+    @apply transition-all duration-300 transform hover:scale-105;
+    @apply shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply glass hover:bg-white/20;
+    @apply text-white font-medium py-2 px-4 rounded-lg;
+    @apply transition-all duration-300;
+    @apply border border-white/30 hover:border-white/50;
+  }
+  
+  .input-field {
+    @apply glass w-full px-4 py-3 rounded-xl;
+    @apply text-white placeholder-white/60;
+    @apply border border-white/30 focus:border-primary-400;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-400/50;
+    @apply transition-all duration-300;
+  }
+  
+  .card {
+    @apply glass rounded-2xl p-6;
+    @apply border border-white/20;
+    @apply transition-all duration-300 hover:border-white/40;
+  }
+}
+
+.waveform {
+  background: linear-gradient(90deg, 
+    rgba(14, 165, 233, 0.8) 0%, 
+    rgba(217, 70, 239, 0.8) 50%, 
+    rgba(14, 165, 233, 0.8) 100%);
+  background-size: 200% 100%;
+  animation: gradient 3s ease infinite;
+}
+
+.music-note {
+  animation: float 3s ease-in-out infinite;
+}
+
+.music-note:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.music-note:nth-child(3) {
+  animation-delay: -2s;
+}
+
+@keyframes equalizer {
+  0%, 100% { height: 20px; }
+  50% { height: 60px; }
+}
+
+.equalizer-bar {
+  animation: equalizer 1s ease-in-out infinite;
+}
+
+.equalizer-bar:nth-child(1) { animation-delay: 0s; }
+.equalizer-bar:nth-child(2) { animation-delay: 0.1s; }
+.equalizer-bar:nth-child(3) { animation-delay: 0.2s; }
+.equalizer-bar:nth-child(4) { animation-delay: 0.3s; }
+.equalizer-bar:nth-child(5) { animation-delay: 0.4s; }
